@@ -19,7 +19,7 @@ This project sets up a Blue/Green deployment for `t2s-services.com` using Miniku
 
 ## Steps
 
-### 1. Start Minikube
+### Step 1: Start Minikube
 
 Start Minikube to create a local Kubernetes cluster:
 
@@ -27,13 +27,13 @@ Start Minikube to create a local Kubernetes cluster:
 minikube start
 ```
 
-### 2. Configure Docker to Use Minikube’s Docker Daemon
+### Step 2: Configure Docker to Use Minikube’s Docker Daemon
 
 ```bash
 eval $(minikube docker-env)
 ```
 
-### 3. Create Docker Images for Blue and Green Environments
+### Step 3: Create Docker Images for Blue and Green Environments
 
 #### 1.	Create a primary NGINX server:
 - Create two HTML files (index-blue.html and index-green.html) with a simple background color for each environment.
@@ -111,7 +111,7 @@ cp index-green.html index.html
 docker build -t t2s-green .
 ```
 
-### 4. Deploy Blue/Green Environments on Minikube
+### Step 4: Deploy Blue/Green Environments on Minikube
 
 #### 1.	Create Kubernetes Deployment and Service Files:
 - Deployment for Blue Environment (blue-deployment.yaml):
@@ -187,7 +187,7 @@ kubectl apply -f green-deployment.yaml
 kubectl apply -f service.yaml
 ```
 
-### 5. Switch Between Blue and Green Environments
+### Step 5: Switch Between Blue and Green Environments
 
 #### 1. Update the Service to Point to Blue:
 ```bash
@@ -199,13 +199,13 @@ kubectl patch service t2s-service -p '{"spec":{"selector":{"environment":"blue"}
 kubectl patch service t2s-service -p '{"spec":{"selector":{"environment":"green"}}}'
 ```
 
-### 6. Verify on Localhost
+### Step 6: Verify on Localhost
 - Run the following to get the Minikube IP and open in a browser:
 ```bash
 minikube service t2s-service
 ```
 
-### 7. Clean Up
+### Step 7: Clean Up
 * To stop Minikube and remove resources:
 ```bash
 kubectl delete -f blue-deployment.yaml
