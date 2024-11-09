@@ -36,10 +36,10 @@ eval $(minikube docker-env)
 ### 3. Create Docker Images for Blue and Green Environments
 
 #### 1.	Create a primary NGINX server:
-Create two HTML files (index-blue.html and index-green.html) with a simple background color for each environment.
+- Create two HTML files (index-blue.html and index-green.html) with a simple background color for each environment.
 
 #### 2.	Dockerfile:
-	•	Place the following Dockerfile in the project root:
+- Place the following Dockerfile in the project root:
 ```bash
 FROM nginx:alpine
 COPY index.html /usr/share/nginx/html/index.html
@@ -56,7 +56,7 @@ docker build -t t2s-green .
 ### 4. Deploy Blue/Green Environments on Minikube
 
 #### 1.	Create Kubernetes Deployment and Service Files:
-* Deployment for Blue Environment (blue-deployment.yaml):
+- Deployment for Blue Environment (blue-deployment.yaml):
 ```bash
 apiVersion: apps/v1
 kind: Deployment
@@ -81,7 +81,7 @@ spec:
         - containerPort: 80
 ```
 
-* Deployment for Green Environment (green-deployment.yaml):
+- Deployment for Green Environment (green-deployment.yaml):
 ```bash
 apiVersion: apps/v1
 kind: Deployment
@@ -106,7 +106,7 @@ spec:
         - containerPort: 80
 ```
 
-* Service (service.yaml)
+- Service (service.yaml)
 ```bash
 apiVersion: v1
 kind: Service
@@ -142,7 +142,7 @@ kubectl patch service t2s-service -p '{"spec":{"selector":{"environment":"green"
 ```
 
 ### 6. Verify on Localhost
-* Run the following to get the Minikube IP and open in a browser:
+- Run the following to get the Minikube IP and open in a browser:
 ```bash
 minikube service t2s-service
 ```
