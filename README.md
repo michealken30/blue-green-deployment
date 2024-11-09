@@ -37,7 +37,7 @@ eval $(minikube docker-env)
 
 #### 1.	Create a primary NGINX server:
 - Create two HTML files (index-blue.html and index-green.html) with a simple background color for each environment.
-- Creating index-blue.html:
+- Create a file, name it index-blue.html, and add the following content:
 ```bash
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +66,7 @@ eval $(minikube docker-env)
 </body>
 </html>
 ```
-- Creating index-green.html:
+- Create a file, name it index-green.html, and add the following content:
 ```bash
 <!DOCTYPE html>
 <html lang="en">
