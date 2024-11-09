@@ -37,6 +37,64 @@ eval $(minikube docker-env)
 
 #### 1.	Create a primary NGINX server:
 - Create two HTML files (index-blue.html and index-green.html) with a simple background color for each environment.
+- Creating index-blue.html:
+```bash
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Deployment</title>
+    <style>
+        body {
+            background-color: blue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blue Deployment Environment</h1>
+</body>
+</html>
+```
+- Creating index-green.html:
+```bash
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Deployment</title>
+    <style>
+        body {
+            background-color: green;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Green Deployment Environment</h1>
+</body>
+</html>
+```
 
 #### 2.	Dockerfile:
 - Place the following Dockerfile in the project root:
