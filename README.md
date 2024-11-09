@@ -36,7 +36,7 @@ eval $(minikube docker-env)
 ### 3. Create Docker Images for Blue and Green Environments
 
 #### 1.	Create a primary NGINX server:
-* Create two HTML files (index-blue.html and index-green.html) with a simple background color for each environment.
+Create two HTML files (index-blue.html and index-green.html) with a simple background color for each environment.
 
 #### 2.	Dockerfile:
 	•	Place the following Dockerfile in the project root:
