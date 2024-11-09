@@ -25,11 +25,13 @@ Start Minikube to create a local Kubernetes cluster:
 
 ```bash
 minikube start
+```
 
 ### 2. Configure Docker to Use Minikube’s Docker Daemon
 
 ```bash
 eval $(minikube docker-env)
+```
 
 ### 3. Create Docker Images for Blue and Green Environments
 
@@ -41,6 +43,7 @@ eval $(minikube docker-env)
 ```bash
 FROM nginx:alpine
 COPY index.html /usr/share/nginx/html/index.html
+```
 
 #### 3.	Build the Docker images:
 ```bash
@@ -48,6 +51,7 @@ cp index-blue.html index.html
 docker build -t t2s-blue .
 cp index-green.html index.html
 docker build -t t2s-green .
+```
 
 ### 4. Deploy Blue/Green Environments on Minikube
 
@@ -75,6 +79,7 @@ spec:
         image: t2s-blue
         ports:
         - containerPort: 80
+```
 
 * Deployment for Green Environment (green-deployment.yaml):
 ```bash
@@ -99,6 +104,7 @@ spec:
         image: t2s-green
         ports:
         - containerPort: 80
+```
 
 * Service (service.yaml)
 ```bash
@@ -114,27 +120,32 @@ spec:
       port: 80
       targetPort: 80
   type: LoadBalancer
+```
 
 #### 2. Apply the Configurations
 ```bash
 kubectl apply -f blue-deployment.yaml
 kubectl apply -f green-deployment.yaml
 kubectl apply -f service.yaml
+```
 
 ### 5. Switch Between Blue and Green Environments
 
 #### 1. Update the Service to Point to Blue:
 ```bash
 kubectl patch service t2s-service -p '{"spec":{"selector":{"environment":"blue"}}}'
+```
 
 #### 2. Update the Service to Point to Green:
 ```bash
 kubectl patch service t2s-service -p '{"spec":{"selector":{"environment":"green"}}}'
+```
 
 ### 6. Verify on Localhost
 * Run the following to get the Minikube IP and open in a browser:
 ```bash
 minikube service t2s-service
+```
 
 ### 7. Clean Up
 * To stop Minikube and remove resources:
@@ -143,3 +154,4 @@ kubectl delete -f blue-deployment.yaml
 kubectl delete -f green-deployment.yaml
 kubectl delete -f service.yaml
 minikube stop
+```
