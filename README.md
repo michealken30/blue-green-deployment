@@ -213,7 +213,25 @@ kubectl patch service t2s-service -p '{"spec":{"selector":{"environment":"blue"}
 kubectl patch service t2s-service -p '{"spec":{"selector":{"environment":"green"}}}'
 ```
 
-### Step 9: Clean Up
+### Step 9: Verify the Flask-based Blue/Green Deployment in the Browser
+- Retrieve the Minikube IP Address:
+```bash
+minikube IP
+```
+- Run minikube tunnel (if using LoadBalancer). Keep this terminal window open while testing. 
+```bash
+minikube tunnel
+```
+- Check service details. Verify that the t2s-service is running on port 80. If it's on another port, note the port number. 
+```bash
+kubectl get svc t2s-service
+```
+- Access the Application in the Browser.
+```bash
+http://<Minikube-IP>
+```
+
+### Step 10: Clean Up
 * To stop Minikube and remove resources:
 ```bash
 kubectl delete -f blue-deployment.yaml
