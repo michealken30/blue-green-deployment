@@ -99,7 +99,10 @@ eval $(minikube docker-env)
 #### 2.	Dockerfile:
 - Place the following Dockerfile in the project root:
 ```bash
+# Use NGINX as the base image
 FROM nginx:alpine
+
+# Copy the HTML file to the NGINX default directory
 COPY index.html /usr/share/nginx/html/index.html
 ```
 
