@@ -156,7 +156,7 @@ spec:
 ```
 
 ### Step 7: Create The Service Configuration
-Service Configuration (k8s/service.yaml):
+Service Configuration (K8s/service.yaml):
 ```bash
 apiVersion: v1
 kind: Service
@@ -174,9 +174,9 @@ spec:
 
 ### Step 8: Apply the Kubernetes Configurations
 ```bash
-kubectl apply -f k8s/blue-deployment.yaml
-kubectl apply -f k8s/green-deployment.yaml
-kubectl apply -f k8s/services.yaml
+kubectl apply -f K8s/blue-deployment.yaml
+kubectl apply -f K8s/green-deployment.yaml
+kubectl apply -f K8s/services.yaml
 ```
 
 ### Step 9: Access the Services
