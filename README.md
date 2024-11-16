@@ -14,45 +14,6 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 
-You can also install Minikube using Docker Compose. First, install Docker Compose. 
-
-```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -oP '(?<="tag_name": ")[^"]*')/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose --version
-```
-
-Now, create a Docker Compose File and name it docker-compose.yml. 
-```bash
-mkdir minikube-docker
-cd minikube-docker
-```
-
-```bash
-version: '3.9'
-
-services:
-  minikube:
-    image: gcr.io/k8s-minikube/minikube:latest
-    container_name: minikube
-    ports:
-      - "8443:8443"
-      - "30000-32767:30000-32767"
-    privileged: true
-    volumes:
-      - /var/lib/docker:/var/lib/docker
-      - /sys/fs/cgroup:/sys/fs/cgroup
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./data:/root/.minikube
-    environment:
-      - MINIKUBE_IN_STYLE=true
-```
-
-Start Mininube and ensure Docker is up and running. 
-```bash
-docker-compose up -d
-```
-
 2. **Install kubectl**:
 [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
