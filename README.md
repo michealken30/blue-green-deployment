@@ -171,6 +171,7 @@ spec:
       containers:
       - name: t2s-blue
         image: t2s-blue
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
 ```
@@ -195,6 +196,7 @@ spec:
       containers:
       - name: t2s-green
         image: t2s-green
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
 ```
