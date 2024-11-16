@@ -9,19 +9,8 @@ This project sets up a Blue/Green deployment for `t2s-services.com` using Miniku
 1. **Install Minikube**:
 Follow the official instructions: [Minikube Installation Guide](https://minikube.sigs.k8s.io/docs/start/)
 
-```bash
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo install minikube-linux-amd64 /usr/local/bin/minikube
-```
-
 2. **Install kubectl**:
 [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-
-```bash
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-chmod +x kubectl
-sudo mv kubectl /usr/local/bin/
-```
 
 4. **Install Docker** (if not already installed):
 Follow the instructions for your operating system: [Docker Installation Guide](https://docs.docker.com/get-docker/)
