@@ -15,5 +15,6 @@ spec:
       containers:
       - name: blue-container
         image: blue-app
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
