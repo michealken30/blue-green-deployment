@@ -26,12 +26,6 @@ sudo mv kubectl /usr/local/bin/
 4. **Install Docker** (if not already installed):
 Follow the instructions for your operating system: [Docker Installation Guide](https://docs.docker.com/get-docker/)
 
-```bash
-sudo apt update
-sudo apt install docker.io -y
-sudo systemctl enable --now docker
-```
-
 ---
 
 ## Steps
