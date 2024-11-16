@@ -128,6 +128,7 @@ spec:
       containers:
       - name: blue-container
         image: blue-app
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
 ```
@@ -151,6 +152,7 @@ spec:
       containers:
       - name: green-container
         image: green-app
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
 ```
