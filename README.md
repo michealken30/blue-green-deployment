@@ -183,8 +183,7 @@ kubectl apply -f K8s/service.yaml
 
 ### Step 9: Access the Services
 ```bash
-minikube service blue-service --url
-minikube service green-service --url
+minikube service blue-green-service
 ```
 
 ### Step 10: Switch Between Blue and Green 
