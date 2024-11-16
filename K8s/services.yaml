@@ -4,20 +4,7 @@ metadata:
   name: blue-service
 spec:
   selector:
-    app: blue
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: NodePort
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: green-service
-spec:
-  selector:
-    app: green
+    app: blue # Initially routes to the Blue deployment
   ports:
     - protocol: TCP
       port: 80
