@@ -176,7 +176,7 @@ spec:
 ```bash
 kubectl apply -f K8s/blue-deployment.yaml
 kubectl apply -f K8s/green-deployment.yaml
-kubectl apply -f K8s/services.yaml
+kubectl apply -f K8s/service.yaml
 ```
 
 ### Step 9: Access the Services
