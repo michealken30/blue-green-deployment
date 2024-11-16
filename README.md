@@ -34,18 +34,6 @@ eval $(minikube docker-env)
 ```
 
 ### Step 3: Create the following Structure
-blue-green-deployment/
-├── blue/
-│   ├── index.html
-│   └── Dockerfile
-├── green/
-│   ├── index.html
-│   └── Dockerfile
-├── k8s/
-│   ├── blue-deployment.yaml
-│   ├── green-deployment.yaml
-│   └── service.yaml
-└── README.md
 
 ### Step 4: Create the Blue and Green Applications
 
