@@ -33,7 +33,11 @@ minikube start
 eval $(minikube docker-env)
 ```
 
-### Step 3: Create the following Structure
+### Step 3: Get this Repo with all the Scripts
+You can also create the required file structure using the scripts below. 
+```bash
+git clone https://github.com/Here2ServeU/blue-green-deployment/
+```
 
 ### Step 4: Create the Blue and Green Applications
 
