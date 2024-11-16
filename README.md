@@ -36,8 +36,8 @@ services:
     image: gcr.io/k8s-minikube/minikube:latest
     container_name: minikube
     ports:
-      - "8443:8443" # Kubernetes API server
-      - "30000-32767:30000-32767" # NodePort range
+      - "8443:8443"
+      - "30000-32767:30000-32767"
     privileged: true
     volumes:
       - /var/lib/docker:/var/lib/docker
