@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: blue-service
+  name: blue-green-service
 spec:
   selector:
-    app: blue # Initially routes to the Blue deployment
+    app: blue # Default to route traffic to the Blue deployment
   ports:
     - protocol: TCP
       port: 80
