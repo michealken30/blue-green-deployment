@@ -48,7 +48,7 @@ services:
       - MINIKUBE_IN_STYLE=true
 ```
 
-Start Mininube
+Start Mininube and ensure Docker is up and running. 
 ```bash
 docker-compose up -d
 ```
