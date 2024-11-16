@@ -15,5 +15,6 @@ spec:
       containers:
       - name: green-container
         image: green-app
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
