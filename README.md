@@ -14,7 +14,7 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 
-You can also do it by using Docker Compose. First, install Docker Compose. 
+You can also install Minikube using Docker Compose. First, install Docker Compose. 
 
 ```bash
 sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -oP '(?<="tag_name": ")[^"]*')/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -22,7 +22,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-Now, create a Docker Compose File. 
+Now, create a Docker Compose File and name it docker-compose.yml. 
 ```bash
 mkdir minikube-docker
 cd minikube-docker
