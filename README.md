@@ -191,22 +191,22 @@ minikube service blue-green-service
 ```
 
 ### Step 10: Switch Between Blue and Green 
-Route Traffic to Blue:
+Route Traffic to Green:
 ```bash
-kubectl patch service blue-green-service -p '{"spec": {"selector": {"app": "blue"}}}'
+kubectl patch service blue-green-service -p '{"spec": {"selector": {"app": "green"}}}'
 
-kubectl describe service blue-green-service  # To verify the service is routing to Blue.
+kubectl describe service blue-green-service  # To verify the service is routing to Green.
 
-minikube service blue-green-service # To test the service. 
+minikube service blue-green-service --url # To get the URL for the service on green deployment.  
 ```
 
 Route Traffic to Blue:
 ```bash
-kubectl patch service blue-green-service -p '{"spec": {"selector": {"app": "green"}}}'
+kubectl patch service blue-green-service -p '{"spec": {"selector": {"app": "blue"}}}'
 
-kubectl describe service blue-green-service # To verify the service is routing to Green
+kubectl describe service blue-green-service # To verify the service is routing to Blue.
 
-minikube service blue-green-service # To test the service.
+minikube service blue-green-service --url # To test the service.
 ```
 
 ### Step 11: Automate Switching (Optional)
