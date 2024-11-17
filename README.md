@@ -194,14 +194,18 @@ minikube service blue-green-service
 Route Traffic to Blue:
 ```bash
 kubectl patch service blue-green-service -p '{"spec": {"selector": {"app": "blue"}}}'
+
 kubectl describe service blue-green-service  # To verify the service is routing to Blue.
+
 minikube service blue-green-service # To test the service. 
 ```
 
 Route Traffic to Blue:
 ```bash
 kubectl patch service blue-green-service -p '{"spec": {"selector": {"app": "green"}}}'
+
 kubectl describe service blue-green-service # To verify the service is routing to Green
+
 minikube service blue-green-service # To test the service.
 ```
 
