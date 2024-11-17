@@ -240,8 +240,8 @@ Switch traffic by running:
 ### Step 12: Clean Up
 * To stop Minikube and remove resources:
 ```bash
-kubectl delete -f /K8s/blue-deployment.yaml
-kubectl delete -f /K8s/green-deployment.yaml
-kubectl delete -f /K8s/service.yaml
+kubectl delete -f K8s/blue-deployment.yaml
+kubectl delete -f K8s/green-deployment.yaml
+kubectl delete -f K8s/service.yaml
 minikube stop
 ```
